@@ -43,7 +43,9 @@ let destination = process.argv[3];
         {
         console.log("entered children reader")
         await tab.goto(source_url, { waitUntil: "networkidle0" });
+        console.log("Reached source_url") ;
         await tab.waitForSelector(".files.js-navigation-container.js-active-navigation-container");
+        console.log("found container") ;
         let core_table = await tab.$$(".files.js-navigation-container.js-active-navigation-container");
         console.log(`No of tables : ${core_table.length}`);
 
