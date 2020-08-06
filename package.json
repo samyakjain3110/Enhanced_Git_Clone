@@ -1,0 +1,16 @@
+{
+  "name": "github_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "github_automation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Samyak Jain",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^9.0.0",
+    "puppeteer": "^3.0.4"
+  }
+}

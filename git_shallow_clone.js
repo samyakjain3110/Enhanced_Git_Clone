@@ -44,24 +44,26 @@ let destination = process.argv[3];
         console.log("entered children reader")
         await tab.goto(source_url, { waitUntil: "networkidle0" });
         console.log("Reached source_url") ;
-        await tab.waitForSelector(".files.js-navigation-container.js-active-navigation-container");
+        await tab.waitForSelector(".js-navigation-container.js-active-navigation-container");
         console.log("found container") ;
-        let core_table = await tab.$$(".files.js-navigation-container.js-active-navigation-container");
+        let core_table = await tab.$$(".js-navigation-container.js-active-navigation-container");
         console.log(`No of tables : ${core_table.length}`);
 
-        await tab.waitForSelector(".files.js-navigation-container.js-active-navigation-container .js-navigation-item");
-        let table_rows = await tab.$$(".files.js-navigation-container.js-active-navigation-container .js-navigation-item",{ delay: 1000 });
+        await tab.waitForSelector(".js-navigation-container.js-active-navigation-container .js-navigation-item");
+        let table_rows = await tab.$$(".js-navigation-container.js-active-navigation-container .js-navigation-item",{ delay: 1000 });
         console.log(`found ${table_rows.length} rows`);
 
     // getting the no of directories and files
-        var table_directory_array = await tab.$$("[aria-label='directory']");
+        var table_directory_array = await tab.$$("[aria-label='Directory']");
         console.log(`No of directories : ${table_directory_array.length}`);
-        let table_file_array = await tab.$$("[aria-label='file']");
+        let table_file_array = await tab.$$("[aria-label='File']");
         console.log(`No of files : ${table_file_array.length}`);
         }
     // getting data of files and directories
-        await tab.waitForSelector(".js-navigation-item .content .js-navigation-open")
-        let table_rows_data = await tab.$$(".js-navigation-item .content .js-navigation-open");
+        // await tab.waitForSelector(".js-navigation-item .content .js-navigation-open")
+        await tab.waitForSelector(".Box-row.Box-row--focus-gray.js-navigation-item .js-navigation-open")
+        // Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item
+        let table_rows_data = await tab.$$(".Box-row.Box-row--focus-gray.js-navigation-item .js-navigation-open.link-gray-dark");
         console.log(`table_rows_data length : ${table_rows_data.length}`);
         let titles = [];
         let hrefs = [];
