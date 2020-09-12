@@ -1,4 +1,4 @@
-# Modified_Git_shallow_clone
+# Enhanced_Git_Cloning
 
 Description :
 Implementation of git clone with JavaScript and NodeJs.
