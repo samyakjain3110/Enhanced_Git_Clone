@@ -14,3 +14,4 @@ Features :
 1. Cloning of specific subdirectories instead of whole git repository .
 2. Access to whole repository structure and content info.
 3. User can even manually make changes in JSON file to directly manipulate the repo structure .
+4. Language specific cloning .
