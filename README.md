@@ -1,4 +1,4 @@
-# Enhanced_Git_Cloning
+# Enhanced_Git_Clone
 
 Description :
 Implementation of git clone with JavaScript and NodeJs.
